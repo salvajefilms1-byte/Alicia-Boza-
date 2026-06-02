@@ -10,7 +10,32 @@ alicia-boza/
 ├── index.html    ← Contenido, textos y estructura
 ├── style.css     ← Todo el diseño visual y colores
 ├── script.js     ← Animaciones e interacciones
-├── images/       ← PON AQUÍ todas tus imágenes
+├── images/       ← 
+![Uploading fondo-gradiente.png…]()
+
+
+<img width="5184" height="3456" alt="retrato-09" src="https://github.com/user-attachments/assets/27e81127-a198-4e23-b0a4-0ae424403637" />
+<img width="1000" height="667" alt="retrato-10" src="https://github.com/user-attachments/assets/74d1e92a-1d4e-40f9-8b18-0b86d03ddb3f" />
+<img width="1000" height="667" alt="retrato-11" src="https://github.com/user-attachments/assets/be36fb72-e5c9-47c6-a8ef-866eff8f84ef" />
+<img width="1000" height="667" alt="retrato-12" src="https://github.com/user-attachments/assets/bd8822b1-0415-4588-8dbc-f5c15019dd55" />
+<img width="667" height="1000" alt="retrato-18" src="https://github.com/user-attachments/assets/c0d83a74-cbd0-407a-a207-6fdd5d5df2a7" />
+<img width="1200" height="800" alt="sobre-mi" src="https://github.com/user-attachments/assets/2a35d092-974b-4f6b-8fcc-fef7ea74ebb1" />
+
+<img width="1000" height="667" alt="retrato-17" src="https://github.com/user-attachments/assets/964c02dd-6114-4571-b8da-19cc1778fd92" />
+<img width="1000" height="667" alt="retrato-16" src="https://github.com/user-attachments/assets/6eff7f75-eff1-4e83-84ca-13711e24ead9" />
+<img width="1000" height="667" alt="retrato-15" src="https://github.com/user-attachments/assets/0ce8b278-c9eb-4bc6-bb1f-3b7ef56d9319" />
+<img width="1000" height="667" alt="retrato-14" src="https://github.com/user-attachments/assets/d2ad22fd-beed-4f15-9354-888a01e342a9" />
+<img width="1000" height="667" alt="retrato-13" src="https://github.com/user-attachments/assets/3e9e6a87-6a17-4daa-8097-cb5c5ee0d34e" />
+
+
+<img width="3283" height="4925" alt="retrato-06" src="https://github.com/user-attachments/assets/b3cc2273-7b55-446d-9228-a6249b82ec50" />
+<img width="7008" height="3944" alt="retrato-05" src="https://github.com/user-attachments/assets/9624a1c5-320a-4814-8371-ec6c76a24031" />
+<img width="7008" height="3944" alt="retrato-04" src="https://github.com/user-attachments/assets/290bc8df-6715-4b21-bcaf-62d61362f33f" />
+<img width="7008" height="3944" alt="retrato-03" src="https://github.com/user-attachments/assets/19d17018-a373-4f92-822a-a865c57ffda7" />
+<img width="7008" height="3944" alt="retrato-02" src="https://github.com/user-attachments/assets/795c6b40-7fd9-49aa-ba7f-0ed32059cf77" />
+<img width="3944" height="7008" alt="retrato-01" src="https://github.com/user-attachments/assets/b7cf37b9-6c8b-4551-aa09-16a894aa6b32" />
+<img width="4000" height="2000" alt="fondo-gradiente" src="https://github.com/user-attachments/assets/318668f7-d280-44ce-a3c6-0355006e4115" />
+
 ├── assets/       ← Favicon y otros recursos
 └── README.md     ← Esta guía
 ```

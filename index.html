@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- *** CAMBIA EL TÍTULO DE LA PESTAÑA *** -->
+  <title>Alicia Boza — Realizadora Multidisciplinaria</title>
+  <meta name="description" content="Alicia Boza — Realizadora audiovisual, fotógrafa, ilustradora y diseñadora. Lima, Perú."/>
+
+  <!-- FUENTES: Bebas Neue (nombre display) + DM Sans (textos) + Cormorant (énfasis serif) -->
+  <!-- *** PARA CAMBIAR FUENTES edita estas líneas y las variables en style.css *** -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Space+Mono&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- CURSOR PERSONALIZADO -->
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- PARTÍCULAS DE FONDO (canvas) -->
+<canvas id="particulas-canvas"></canvas>
+
+<!-- ══════════════════════════════════════════
+     LOADER
+══════════════════════════════════════════ -->
+<div id="loader">
+  <div class="ld-letras">
+    <span class="ld-a">A</span><span class="ld-b">B</span>
+  </div>
+  <div class="ld-linea"><div class="ld-progreso"></div></div>
+  <p class="ld-subtitulo">Realizadora Multidisciplinaria</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NAVEGACIÓN
+     *** CAMBIA LOS LINKS DEL MENÚ AQUÍ ***
+══════════════════════════════════════════ -->
+<nav id="nav">
+  <!-- *** CAMBIA EL LOGO *** -->
+  <a href="#inicio" class="nav-logo">AB<span>.</span></a>
+  <button id="nav-btn" aria-label="Menú">
+    <span></span><span></span>
+  </button>
+  <ul id="nav-menu">
+    <li><a href="#trabajos" class="nl">Trabajos</a></li>
+    <li><a href="#sobre"    class="nl">Sobre mí</a></li>
+    <li><a href="#skills"   class="nl">Skills</a></li>
+    <li><a href="#contacto" class="nl">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO — NOMBRE GIGANTE + GRADIENTE REAL
+══════════════════════════════════════════ -->
+<section id="inicio" class="hero">
+
+  <!-- NOMBRE: ALICIA en sólido, BOZA en outline — MISMA fuente Bebas Neue -->
+  <div class="hero-nombre-wrap">
+    <h1 class="hero-nombre">
+      <!-- *** CAMBIA EL NOMBRE AQUÍ *** -->
+      <span class="hn-solido">ALICIA</span>
+      <span class="hn-outline">BOZA</span>
+    </h1>
+  </div>
+
+  <!-- STRIP DE INFO: rol + nav inline + frase -->
+  <div class="hero-strip">
+    <div class="hs-col">
+      <!-- *** CAMBIA EL ROL *** -->
+      <p class="hs-rol">Realizadora Multidisciplinaria</p>
+      <p class="hs-ciudad">Lima, Perú</p>
+    </div>
+    <div class="hs-col hs-col--centro">
+      <nav class="hs-nav">
+        <a href="#trabajos">Trabajos</a>
+        <a href="#sobre">Info</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="hs-col hs-col--der">
+      <!-- *** CAMBIA LA FRASE *** -->
+      <p class="hs-frase">Fotografía · Audiovisual<br/>Diseño · Ilustración</p>
+    </div>
+  </div>
+
+  <!-- ZONA GRADIENTE: tu imagen FON.png real, con capas de color encima -->
+  <div class="hero-gradiente-zona">
+    <!-- *** Esta imagen es tu archivo FON.png *** -->
+    <img class="hero-grad-img" src="images/fondo-gradiente.png" alt=""/>
+    <!-- Capa oscura izquierda -->
+    <div class="hero-grad-capa-izq"></div>
+    <!-- Capa oscura inferior -->
+    <div class="hero-grad-capa-inf"></div>
+
+    <!-- MARQUEE con disciplinas flotando -->
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Fotografía</span><span>—</span>
+        <span>Audiovisual</span><span>—</span>
+        <span>Diseño</span><span>—</span>
+        <span>Ilustración</span><span>—</span>
+        <span>Fotografía</span><span>—</span>
+        <span>Audiovisual</span><span>—</span>
+        <span>Diseño</span><span>—</span>
+        <span>Ilustración</span><span>—</span>
+      </div>
+    </div>
+
+    <!-- Tags flotantes sobre el gradiente -->
+    <div class="hero-tags-flotantes">
+      <span class="htf" style="--d:2.8s">Realizadora</span>
+      <span class="htf" style="--d:3.1s">Ilustradora</span>
+      <span class="htf" style="--d:3.4s">Diseñadora</span>
+    </div>
+
+    <!-- Disciplinas verticales -->
+    <div class="hero-disciplinas-vert">
+      <span>Fotografía</span>
+      <span>Audiovisual</span>
+      <span>Diseño</span>
+      <span>Ilustración</span>
+    </div>
+  </div>
+
+  <!-- Ghost nombre al fondo -->
+  <div class="hero-ghost" aria-hidden="true">ALICIA BOZA</div>
+
+  <!-- Indicador de scroll -->
+  <div class="hero-scroll-ind">
+    <div class="hsi-cable"></div>
+    <span>Desplaza</span>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     TRABAJOS
+     *** PARA AGREGAR UN PROYECTO:
+         1. Copia un bloque .tr-fila completo
+         2. Cambia data-cat, data-idx, título y subtítulo
+         3. Agrega los datos en script.js → array PROYECTOS
+══════════════════════════════════════════ -->
+<section id="trabajos" class="trabajos">
+
+  <!-- Cabecera con filtros -->
+  <div class="tr-header">
+    <div class="tr-header-izq">
+      <span class="tr-count">(07)</span><!-- *** ACTUALIZA ESTE NÚMERO *** -->
+      <h2 class="tr-titulo">Trabajos</h2>
+    </div>
+    <!-- *** AGREGA O ELIMINA FILTROS AQUÍ *** -->
+    <div class="tr-filtros" id="filtros">
+      <button class="fb active" data-f="todo">Todo</button>
+      <button class="fb" data-f="fotografia">Fotografía</button>
+      <button class="fb" data-f="audiovisual">Audiovisual</button>
+      <button class="fb" data-f="diseno">Diseño</button>
+      <button class="fb" data-f="ilustracion">Ilustración</button>
+    </div>
+  </div>
+
+  <!-- LISTA DE TRABAJOS -->
+  <div class="tr-lista" id="tr-lista">
+
+    <!-- ═══ 01 REALIZACIÓN AUDIOVISUAL ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="audiovisual" data-idx="0">
+      <div class="tr-inner">
+        <span class="tr-num">01</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Realización Audiovisual</h3>
+          <p class="tr-sub">Dirección · Guión · Edición · Postproducción</p>
+        </div>
+        <span class="tr-etiq">Audiovisual</span>
+        <span class="tr-yr">2024</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <!-- GALERÍA — Se despliega al hacer clic -->
+      <div class="tr-galeria">
+        <div class="gal-av">
+          <!-- REEL principal — grande -->
+          <div class="gal-vid gal-vid--grande" data-yt="E6_NcPjXg6E">
+            <div class="gal-thumb">
+              <img src="https://img.youtube.com/vi/E6_NcPjXg6E/maxresdefault.jpg" alt="Reel Audiovisual"/>
+              <div class="gal-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg></div>
+              <div class="gal-vid-info">
+                <span class="gvi-cat">Reel</span>
+                <h4>Reel Audiovisual</h4>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto audiovisual -->
+          <div class="gal-vid" data-yt="0avnyC78VVE">
+            <div class="gal-thumb">
+              <img src="https://img.youtube.com/vi/0avnyC78VVE/maxresdefault.jpg" alt="Proyecto Audiovisual"/>
+              <div class="gal-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg></div>
+              <div class="gal-vid-info">
+                <span class="gvi-cat">Proyecto</span>
+                <h4>Proyecto Audiovisual</h4>
+              </div>
+            </div>
+          </div>
+          <!-- Cortometraje 1 -->
+          <div class="gal-vid" data-yt="Fpq-UxANQEk">
+            <div class="gal-thumb">
+              <img src="https://img.youtube.com/vi/Fpq-UxANQEk/maxresdefault.jpg" alt="Cortometraje"/>
+              <div class="gal-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg></div>
+              <div class="gal-vid-info">
+                <span class="gvi-cat">Cortometraje</span>
+                <h4>Dirigido, escrito y editado</h4>
+              </div>
+            </div>
+          </div>
+          <!-- Cortometraje 2 -->
+          <div class="gal-vid" data-yt="OioIMuNPHpI">
+            <div class="gal-thumb">
+              <img src="https://img.youtube.com/vi/OioIMuNPHpI/maxresdefault.jpg" alt="Cortometraje"/>
+              <div class="gal-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg></div>
+              <div class="gal-vid-info">
+                <span class="gvi-cat">Cortometraje</span>
+                <h4>Dirigido, escrito y editado</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 02 RETRATO ARTÍSTICO ═══ -->
+    <!-- *** PARA REEMPLAZAR IMÁGENES: cambia src="images/retrato-XX.jpg" *** -->
+    <div class="tr-fila tr-fila--exp" data-cat="fotografia" data-idx="1">
+      <div class="tr-inner">
+        <span class="tr-num">02</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Retrato artístico</h3>
+          <p class="tr-sub">Estudio · Exteriores · Doble exposición · Luz natural</p>
+        </div>
+        <span class="tr-etiq">Fotografía</span>
+        <span class="tr-yr">2024</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <!-- GALERÍA EXPERIMENTAL: composición asimétrica con tus fotos reales -->
+        <div class="gal-experimental">
+          <!-- Foto grande con espejo (retrato-03 = la de las reflexiones en rojo) -->
+          <div class="gal-exp-item gal-exp-grande" data-img="images/retrato-03.jpg">
+            <img src="images/retrato-03.jpg" alt="Retrato con reflexiones"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <!-- Foto b/n espejo -->
+          <div class="gal-exp-item gal-exp-tall" data-img="images/retrato-04.jpg">
+            <img src="images/retrato-04.jpg" alt="Retrato b/n"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <!-- Retrato con fondo rojo -->
+          <div class="gal-exp-item" data-img="images/retrato-02.jpg">
+            <img src="images/retrato-02.jpg" alt="Retrato rojo"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <!-- Retrato b/n doble exposición -->
+          <div class="gal-exp-item gal-exp-wide" data-img="images/retrato-05.jpg">
+            <img src="images/retrato-05.jpg" alt="Doble exposición"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <!-- Retrato estudio b/n -->
+          <div class="gal-exp-item" data-img="images/retrato-01.jpg">
+            <img src="images/retrato-01.jpg" alt="Retrato estudio"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 03 FOTOGRAFÍA CORPORATIVA Y SOCIAL ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="fotografia" data-idx="2">
+      <div class="tr-inner">
+        <span class="tr-num">03</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Fotografía corporativa y social</h3>
+          <p class="tr-sub">Quinceañeros · Eventos · Grupos · Exteriores</p>
+        </div>
+        <span class="tr-etiq">Fotografía</span>
+        <span class="tr-yr">2024</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <div class="gal-horizontal-scroll">
+          <div class="ghs-track">
+            <div class="ghs-item" data-img="images/retrato-06.jpg"><img src="images/retrato-06.jpg" alt=""/><div class="gal-exp-overlay"></div></div>
+            <div class="ghs-item" data-img="images/retrato-07.jpg"><img src="images/retrato-07.jpg" alt=""/><div class="gal-exp-overlay"></div></div>
+            <div class="ghs-item" data-img="images/retrato-08.jpg"><img src="images/retrato-08.jpg" alt=""/><div class="gal-exp-overlay"></div></div>
+            <div class="ghs-item" data-img="images/retrato-09.jpg"><img src="images/retrato-09.jpg" alt=""/><div class="gal-exp-overlay"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 04 FOTOGRAFÍA ANÁLOGA Y ARTÍSTICA ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="fotografia" data-idx="3">
+      <div class="tr-inner">
+        <span class="tr-num">04</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Fotografía artística y análoga</h3>
+          <p class="tr-sub">Playa · Dobles exposiciones · 35mm · Movimiento</p>
+        </div>
+        <span class="tr-etiq">Fotografía</span>
+        <span class="tr-yr">2023</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <!-- GALERÍA TIPO CINE: widescreen, horizontal -->
+        <div class="gal-cine">
+          <div class="gal-cine-item gal-cine-grande" data-img="images/retrato-16.jpg"><img src="images/retrato-16.jpg" alt="Doble exposición playa"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-17.jpg"><img src="images/retrato-17.jpg" alt="Serie playa"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-15.jpg"><img src="images/retrato-15.jpg" alt="Playa mar"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item gal-cine-tall" data-img="images/retrato-18.jpg"><img src="images/retrato-18.jpg" alt="Danza"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-14.jpg"><img src="images/retrato-14.jpg" alt="Playa neblina"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-12.jpg"><img src="images/retrato-12.jpg" alt="Postproducción"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-13.jpg"><img src="images/retrato-13.jpg" alt="Retrato exterior"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item gal-cine-wide" data-img="images/retrato-11.jpg"><img src="images/retrato-11.jpg" alt="Playa rocas"/><div class="gal-exp-overlay"></div></div>
+          <div class="gal-cine-item" data-img="images/retrato-10.jpg"><img src="images/retrato-10.jpg" alt="Playa costa"/><div class="gal-exp-overlay"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 05 ILUSTRACIÓN ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="ilustracion" data-idx="4">
+      <div class="tr-inner">
+        <span class="tr-num">05</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Ilustración</h3>
+          <p class="tr-sub">Arte conceptual · Ilustración publicitaria · Dibujo técnico</p>
+        </div>
+        <span class="tr-etiq">Ilustración</span>
+        <span class="tr-yr">2023</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <div class="gal-behance-wrap">
+          <!-- Card Behance -->
+          <a href="https://www.behance.net/aliciaboza1" target="_blank" class="behance-card">
+            <div class="bc-top">
+              <span class="bc-etiq">Portafolio completo</span>
+              <svg class="bc-ico" viewBox="0 0 32 32" fill="none">
+                <rect x="2" y="6" width="11" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="19" y="6" width="11" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 20h11M19 20h11M2 24h11M19 24h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h4>Ilustración en Behance</h4>
+            <p>behance.net/aliciaboza1</p>
+            <span class="bc-cta">Ver portafolio ↗</span>
+          </a>
+          <!-- Placeholder para fotos de ilustración propias -->
+          <!-- *** REEMPLAZA ESTAS IMÁGENES CON TUS ILUSTRACIONES *** -->
+          <div class="gal-exp-item" data-img="images/retrato-03.jpg">
+            <img src="images/retrato-03.jpg" alt="Ilustración 1"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <div class="gal-exp-item gal-exp-tall" data-img="images/retrato-04.jpg">
+            <img src="images/retrato-04.jpg" alt="Ilustración 2"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 06 DISEÑO EDITORIAL Y DIGITAL ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="diseno" data-idx="5">
+      <div class="tr-inner">
+        <span class="tr-num">06</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Diseño editorial y digital</h3>
+          <p class="tr-sub">Revistas · Catálogos · Arte publicitario · Packaging · Textil</p>
+        </div>
+        <span class="tr-etiq">Diseño</span>
+        <span class="tr-yr">2023</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <!-- *** REEMPLAZA ESTAS IMÁGENES CON TUS PROYECTOS DE DISEÑO *** -->
+        <div class="gal-experimental">
+          <div class="gal-exp-item gal-exp-wide" data-img="images/retrato-02.jpg">
+            <img src="images/retrato-02.jpg" alt="Diseño editorial"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <div class="gal-exp-item" data-img="images/retrato-05.jpg">
+            <img src="images/retrato-05.jpg" alt="Diseño"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+          <div class="gal-exp-item gal-exp-tall" data-img="images/retrato-01.jpg">
+            <img src="images/retrato-01.jpg" alt="Diseño"/>
+            <div class="gal-exp-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 07 FOTOGRAFÍA DE PRODUCTOS ═══ -->
+    <div class="tr-fila tr-fila--exp" data-cat="fotografia" data-idx="6">
+      <div class="tr-inner">
+        <span class="tr-num">07</span>
+        <div class="tr-info">
+          <h3 class="tr-nombre">Fotografía de productos</h3>
+          <p class="tr-sub">Still life · Composición · Dirección de arte</p>
+        </div>
+        <span class="tr-etiq">Fotografía</span>
+        <span class="tr-yr">2024</span>
+        <span class="tr-mas">+</span>
+      </div>
+      <div class="tr-galeria">
+        <!-- *** REEMPLAZA CON TUS FOTOS DE PRODUCTOS *** -->
+        <div class="gal-horizontal-scroll">
+          <div class="ghs-track">
+            <div class="ghs-item" data-img="images/retrato-07.jpg"><img src="images/retrato-07.jpg" alt="Producto"/><div class="gal-exp-overlay"></div></div>
+            <div class="ghs-item" data-img="images/retrato-08.jpg"><img src="images/retrato-08.jpg" alt="Producto"/><div class="gal-exp-overlay"></div></div>
+            <div class="ghs-item" data-img="images/retrato-06.jpg"><img src="images/retrato-06.jpg" alt="Producto"/><div class="gal-exp-overlay"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- fin tr-lista -->
+</section>
+
+<!-- MODAL VÍDEO -->
+<div id="modal-video" class="modal-v">
+  <div id="mv-fondo" class="mv-fondo"></div>
+  <div class="mv-caja">
+    <button id="mv-cerrar" class="mv-cerrar">✕ Cerrar</button>
+    <div class="mv-frame-wrap">
+      <iframe id="mv-frame" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IMAGEN -->
+<div id="modal-img" class="modal-i">
+  <div id="mi-fondo" class="mi-fondo"></div>
+  <div class="mi-caja">
+    <button id="mi-cerrar" class="mi-cerrar">✕</button>
+    <img id="mi-foto" src="" alt=""/>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SOBRE MÍ — con tu foto real
+     *** CAMBIA TU FOTO: images/sobre-mi.jpg ***
+══════════════════════════════════════════ -->
+<section id="sobre" class="sobre">
+
+  <!-- Fondo gradiente suave de sección -->
+  <div class="sobre-fondo-grad"></div>
+
+  <div class="sobre-inner">
+
+    <!-- Columna izquierda: foto + datos -->
+    <div class="sobre-izq">
+
+      <!-- TU FOTO REAL — la del fondo rojo con gafas -->
+      <div class="sobre-foto-wrap" data-reveal>
+        <!-- *** CAMBIA ESTA FOTO *** -->
+        <img src="images/sobre-mi.jpg" alt="Alicia Boza"/>
+        <!-- Marco de acento animado -->
+        <div class="sobre-marco"></div>
+        <!-- Badge de nombre -->
+        <div class="sobre-badge">Alicia Boza</div>
+      </div>
+
+      <!-- Datos de contacto -->
+      <div class="sobre-datos" data-reveal>
+        <div class="sd-fila">
+          <span class="sd-etiq">Ubicación</span>
+          <!-- *** CAMBIA *** --><span class="sd-val">Lima, Perú</span>
+        </div>
+        <div class="sd-fila">
+          <span class="sd-etiq">Email</span>
+          <!-- *** CAMBIA TU EMAIL *** -->
+          <a href="mailto:aliciasofiaboza@gmail.com" class="sd-val sd-link">aliciasofiaboza@gmail.com</a>
+        </div>
+        <div class="sd-fila">
+          <span class="sd-etiq">Teléfono</span>
+          <!-- *** CAMBIA TU TELÉFONO *** -->
+          <a href="tel:+51983922099" class="sd-val sd-link">(+51) 983 922 099</a>
+        </div>
+        <div class="sd-fila">
+          <span class="sd-etiq">Idiomas</span>
+          <span class="sd-val">Español · Inglés básico</span>
+        </div>
+      </div>
+
+      <!-- Redes -->
+      <div class="sobre-redes" data-reveal>
+        <!-- *** CAMBIA TUS REDES *** -->
+        <a href="https://www.instagram.com/alicia_boza_" target="_blank" class="sd-red">Instagram ↗</a>
+        <a href="https://www.linkedin.com/in/alicia-boza-ontaneda-443bb6154/" target="_blank" class="sd-red">LinkedIn ↗</a>
+        <a href="https://www.behance.net/aliciaboza1" target="_blank" class="sd-red">Behance ↗</a>
+      </div>
+    </div>
+
+    <!-- Columna derecha: texto + áreas -->
+    <div class="sobre-der">
+      <div class="sobre-etiq" data-reveal>— Sobre mí</div>
+
+      <h2 class="sobre-titulo" data-reveal>
+        <!-- *** CAMBIA ESTE TÍTULO *** -->
+        Realizadora<br/><em>Multidisciplinaria</em>
+      </h2>
+
+      <!-- *** CAMBIA TU BIO AQUÍ *** -->
+      <p class="sobre-bio" data-reveal>
+        Soy realizadora audiovisual y diseñadora multidisciplinaria, apasionada por contar historias a través de imágenes. Mi formación en Dirección de Cine y Televisión, junto con mi experiencia en diseño publicitario e ilustración, me ha permitido explorar distintas formas de narrar.
+      </p>
+      <p class="sobre-bio" data-reveal>
+        Creo en el poder de las imágenes para transmitir ideas, conectar con las personas y generar impacto. Cada proyecto es una oportunidad para construir un lenguaje visual nuevo.
+      </p>
+
+      <!-- Áreas de trabajo — sin formación, sin instituciones -->
+      <div class="sobre-areas" data-reveal>
+        <div class="sa-item">
+          <span class="sa-num">01</span>
+          <div class="sa-texto">
+            <h3>Realización Audiovisual</h3>
+            <p>Dirección, guión, producción, grabación y edición</p>
+          </div>
+        </div>
+        <div class="sa-item">
+          <span class="sa-num">02</span>
+          <div class="sa-texto">
+            <h3>Fotografía</h3>
+            <p>Digital, análoga, retrato, corporativa, productos</p>
+          </div>
+        </div>
+        <div class="sa-item">
+          <span class="sa-num">03</span>
+          <div class="sa-texto">
+            <h3>Diseño</h3>
+            <p>Editorial, digital, packaging, textil, arte publicitario</p>
+          </div>
+        </div>
+        <div class="sa-item">
+          <span class="sa-num">04</span>
+          <div class="sa-texto">
+            <h3>Ilustración</h3>
+            <p>Arte conceptual, publicidad, dibujo técnico</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SKILLS — Solo técnico, sin habilidades blandas
+     *** PARA CAMBIAR PORCENTAJES: edita data-lvl en cada barra ***
+══════════════════════════════════════════ -->
+<section id="skills" class="skills">
+  <div class="skills-inner">
+
+    <div class="skills-head" data-reveal>
+      <span class="skills-etiq">— Skills</span>
+      <h2 class="skills-titulo">Herramientas<br/><em>técnicas</em></h2>
+    </div>
+
+    <!-- Barras de nivel — 2 columnas -->
+    <!-- *** CAMBIA LOS PORCENTAJES (data-lvl) AQUÍ *** -->
+    <div class="skills-cols" data-reveal>
+
+      <div class="sk-col">
+        <div class="sk-col-label">Imagen y diseño</div>
+        <div class="sk-fila"><span class="sk-nom">Photoshop</span>     <div class="sk-barra"><div class="sk-fill" data-lvl="95"></div></div><span class="sk-pct">95%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Lightroom</span>     <div class="sk-barra"><div class="sk-fill" data-lvl="95"></div></div><span class="sk-pct">95%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Illustrator</span>   <div class="sk-barra"><div class="sk-fill" data-lvl="88"></div></div><span class="sk-pct">88%</span></div>
+        <div class="sk-fila"><span class="sk-nom">InDesign</span>      <div class="sk-barra"><div class="sk-fill" data-lvl="82"></div></div><span class="sk-pct">82%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Capture One</span>   <div class="sk-barra"><div class="sk-fill" data-lvl="80"></div></div><span class="sk-pct">80%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Affinity Designer</span><div class="sk-barra"><div class="sk-fill" data-lvl="75"></div></div><span class="sk-pct">75%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Corel Draw</span>    <div class="sk-barra"><div class="sk-fill" data-lvl="72"></div></div><span class="sk-pct">72%</span></div>
+        <div class="sk-fila"><span class="sk-nom">ArtRage / SketchBook</span><div class="sk-barra"><div class="sk-fill" data-lvl="82"></div></div><span class="sk-pct">82%</span></div>
+      </div>
+
+      <div class="sk-col">
+        <div class="sk-col-label">Audiovisual y motion</div>
+        <div class="sk-fila"><span class="sk-nom">Premiere Pro</span>  <div class="sk-barra"><div class="sk-fill" data-lvl="90"></div></div><span class="sk-pct">90%</span></div>
+        <div class="sk-fila"><span class="sk-nom">DaVinci Resolve</span><div class="sk-barra"><div class="sk-fill" data-lvl="85"></div></div><span class="sk-pct">85%</span></div>
+        <div class="sk-fila"><span class="sk-nom">After Effects</span> <div class="sk-barra"><div class="sk-fill" data-lvl="78"></div></div><span class="sk-pct">78%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Final Cut</span>     <div class="sk-barra"><div class="sk-fill" data-lvl="75"></div></div><span class="sk-pct">75%</span></div>
+        <div class="sk-fila"><span class="sk-nom">Audition</span>      <div class="sk-barra"><div class="sk-fill" data-lvl="68"></div></div><span class="sk-pct">68%</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACTO
+     *** CAMBIA TUS DATOS AQUÍ ***
+══════════════════════════════════════════ -->
+<section id="contacto" class="contacto">
+
+  <!-- Zona de gradiente como acento decorativo -->
+  <div class="ct-grad-deco"></div>
+
+  <!-- Título enorme -->
+  <div class="ct-titulo-wrap">
+    <h2 class="ct-titulo">
+      <span class="ct-linea">Trabajemos</span>
+      <span class="ct-linea ct-outline"><em>juntos.</em></span>
+    </h2>
+  </div>
+
+  <div class="ct-cuerpo">
+
+    <!-- Links directos -->
+    <div class="ct-izq" data-reveal>
+      <p class="ct-desc">Siempre en búsqueda de nuevas oportunidades creativas. Conectemos.</p>
+      <div class="ct-links">
+        <!-- *** CAMBIA CADA DATO *** -->
+        <a href="mailto:aliciasofiaboza@gmail.com" class="ct-link">
+          <span class="ctl-etiq">Email</span>
+          <span class="ctl-val">aliciasofiaboza@gmail.com</span>
+          <span class="ctl-flecha">↗</span>
+        </a>
+        <a href="tel:+51983922099" class="ct-link">
+          <span class="ctl-etiq">Teléfono</span>
+          <span class="ctl-val">(+51) 983 922 099</span>
+          <span class="ctl-flecha">↗</span>
+        </a>
+        <a href="https://www.instagram.com/alicia_boza_" target="_blank" class="ct-link">
+          <span class="ctl-etiq">Instagram</span>
+          <!-- *** CAMBIA TU USUARIO *** -->
+          <span class="ctl-val">@alicia_boza_</span>
+          <span class="ctl-flecha">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alicia-boza-ontaneda-443bb6154/" target="_blank" class="ct-link">
+          <span class="ctl-etiq">LinkedIn</span>
+          <span class="ctl-val">Alicia Boza Ontaneda</span>
+          <span class="ctl-flecha">↗</span>
+        </a>
+        <a href="https://www.behance.net/aliciaboza1" target="_blank" class="ct-link">
+          <span class="ctl-etiq">Behance</span>
+          <span class="ctl-val">aliciaboza1</span>
+          <span class="ctl-flecha">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <!-- *** PARA ACTIVAR ENVÍO REAL: agrega action="https://formspree.io/f/TUCODE" method="POST" *** -->
+    <form id="formulario" class="ct-form" data-reveal novalidate>
+      <div class="fg">
+        <label for="f-nombre">Nombre</label>
+        <input id="f-nombre" name="nombre" type="text" placeholder="Tu nombre" required/>
+      </div>
+      <div class="fg">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" placeholder="tu@email.com" required/>
+      </div>
+      <div class="fg">
+        <label for="f-tipo">Tipo de proyecto</label>
+        <select id="f-tipo" name="tipo">
+          <option value="">Selecciona</option>
+          <option>Fotografía</option>
+          <option>Video y audiovisual</option>
+          <option>Diseño gráfico</option>
+          <option>Ilustración</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="f-msg">Mensaje</label>
+        <textarea id="f-msg" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+      </div>
+      <button type="submit" class="f-enviar">
+        <span>Enviar mensaje</span>
+        <span class="f-flecha">→</span>
+      </button>
+      <p id="f-ok" class="f-ok">¡Mensaje enviado! Pronto estaré en contacto.</p>
+    </form>
+
+  </div>
+
+  <!-- FOOTER STRIP -->
+  <div class="footer">
+    <div class="footer-redes">
+      <!-- *** CAMBIA TUS REDES *** -->
+      <a href="https://www.instagram.com/alicia_boza_" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/alicia-boza-ontaneda-443bb6154/" target="_blank">LinkedIn</a>
+      <a href="https://www.behance.net/aliciaboza1" target="_blank">Behance</a>
+    </div>
+    <!-- *** CAMBIA EL COPYRIGHT *** -->
+    <p class="footer-copy">© 2024 Alicia Boza · Lima, Perú</p>
+    <!-- Nombre gigante firma final — igual que Derek Cole -->
+    <a href="#inicio" class="footer-firma">ALICIA BOZA</a>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

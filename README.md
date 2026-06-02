@@ -10,11 +10,7 @@ alicia-boza/
 ├── index.html    ← Contenido, textos y estructura
 ├── style.css     ← Todo el diseño visual y colores
 ├── script.js     ← Animaciones e interacciones
-├── images/       ← 
-![Uploading fondo-gradiente.png…]()
-
-
-<img width="5184" height="3456" alt="retrato-09" src="https://github.com/user-attachments/assets/27e81127-a198-4e23-b0a4-0ae424403637" />
+├── images/       ← <img width="5184" height="3456" alt="retrato-09" src="https://github.com/user-attachments/assets/27e81127-a198-4e23-b0a4-0ae424403637" />
 <img width="1000" height="667" alt="retrato-10" src="https://github.com/user-attachments/assets/74d1e92a-1d4e-40f9-8b18-0b86d03ddb3f" />
 <img width="1000" height="667" alt="retrato-11" src="https://github.com/user-attachments/assets/be36fb72-e5c9-47c6-a8ef-866eff8f84ef" />
 <img width="1000" height="667" alt="retrato-12" src="https://github.com/user-attachments/assets/bd8822b1-0415-4588-8dbc-f5c15019dd55" />

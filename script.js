@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   ALICIA BOZA GRANDA — SCRIPT.JS — V4
+   ALICIA BOZA  — SCRIPT.JS — V4
    1. Loader      5. Galerías expandibles
    2. Cursor      6. Modales (video + imagen)
    3. Nav         7. Skills (barras)
@@ -268,6 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initFormulario();
   initScroll();
-  console.log('%c Alicia Boza Granda · Realizadora Multidisciplinaria ', 'background:#1F40FC;color:#F3CAFB;padding:4px 14px;font-size:12px;');
+  console.log('%c Alicia Boza· Realizadora Multidisciplinaria ', 'background:#1F40FC;color:#F3CAFB;padding:4px 14px;font-size:12px;');
 });
 if ('ontouchstart' in window) document.documentElement.classList.add('touch');

@@ -221,11 +221,9 @@ body.cursor-big #c-ring {
   clip-path: inset(0 100% 0 0);
   animation: revela 1.1s 1.9s var(--ease) forwards;
 }
-/* BOZA — outline lila (misma fuente Bebas Neue) */
-.hn-outline {
-  display: block;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--lila);
+/* BOZA — sólido blanco */(misma fuente Bebas Neue) */
+.hn-solido {
+  display: block; color: var(--blanco);
   clip-path: inset(0 100% 0 0);
   animation: revela 1.1s 2.1s var(--ease) forwards;
 }
